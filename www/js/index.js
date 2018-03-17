@@ -66,6 +66,7 @@ function registerSend() {
                     phoneNumber: phoneno
                 })  
                 initializeCryptoKeys();
+                FCMPlugin.getToken();
                 document.querySelector('#navigator').resetToPage('chats.html', {animation: 'fade-ios'}, {animationOptions: {duration: 0.2, delay: 0.4, timing: 'ease-in'}});
             })
             .fail(function() {
@@ -319,3 +320,9 @@ function prewriteChats() {
         document.getElementById("chats-list-chats").innerHTML = HTML;
     }
 }
+
+
+//GCM Management
+FCMPlugin.onTokenRefresh(function(token){
+    alert( token );
+});
