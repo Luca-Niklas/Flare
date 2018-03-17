@@ -65,8 +65,8 @@ body {
 }
 
 #loginLogo {
-    width: 81px;
-    height: 20px;
+    width: 22px;
+    height: 30px;
     margin-bottom: 35px;
 }
 
@@ -126,6 +126,8 @@ body {
 /* ------------------------------------ */
 
 #registerContent {
+    top: 0 !important;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,14 +158,30 @@ body {
 }
 
 #registerLogo {
-    width: 81px;
-    height: 20px;
+    width: 22px;
+    height: 30px;
     margin-bottom: 35px;
 }
 
 #register {
     font-size: 10px;
     color: #00EECB;
+}
+
+.back-button__icon {
+    display: none;
+}
+
+ons-toolbar {
+    position: relative !important;
+    background-image: none !important;
+}
+
+#backButtonIcon {
+    color: #00EECB;
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 #registerButton {

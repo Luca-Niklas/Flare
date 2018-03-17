@@ -9,6 +9,7 @@
 	<script src="lib/onsenui/js/onsenui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/cryptico/0.0.1343522940/cryptico.min.js"></script>
 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="components/loader.css">
 	<link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
 	<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
@@ -91,10 +92,8 @@
 	<ons-template id="loginloadingscreen.html">
 		<ons-page id="loginloadingscreen">
 			<div class="content" id="loginloadingcontent">
-				<div id="loadingWrapper">
 					<img id="splashLogo" src="img/logo.svg"></img>
 					<!-- <div id="loader"></div> -->
-				</div>
 			</div>
 		</ons-page>
 	</ons-template>
@@ -103,7 +102,7 @@
 		<ons-page id="login">
 			<div id="loginContent" class="content" style="text-align: center">
 				<div id="loginWrapper">
-					<img id="loginLogo" class="center" src="img/logoText.svg"></img>
+					<img id="loginLogo" class="center" src="img/logo.svg"></img>
 					<br>
 					<ons-input id="email-form-login" type="email" placeholder="E-Mail" modifier="underlined" float></ons-input>
 					<br>
@@ -123,11 +122,11 @@
 	<ons-template id="register.html">
 		<ons-page id="register">
 			<ons-toolbar>
-				<div class="left"><ons-back-button>Zurück</ons-back-button></div>
+				<div class="left"><ons-back-button><i id="backButtonIcon" class="material-icons">keyboard_arrow_left</i></ons-back-button></div>
 			</ons-toolbar>
 			<div id="registerContent" class="content" style="text-align: center">
 				<div id="registerWrapper">
-					<img id="registerLogo" class="center" src="img/logoText.svg"></img>
+					<img id="registerLogo" class="center" src="img/logo.svg"></img>
 					<br>
 					<ons-input id="email-form-register" type="email" placeholder="E-Mail" modifier="underlined" float></ons-input>
 					<br>
