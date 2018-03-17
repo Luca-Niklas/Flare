@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>776441841741-80b393jo0s5cv91sfpt9peop3pg574jr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.776441841741-80b393jo0s5cv91sfpt9peop3pg574jr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBlqcr4HsEAN2nTlvYLovyr_Ar4s3RuBkU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>776441841741</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>de.nschroetler.flare</string>
+	<key>PROJECT_ID</key>
+	<string>socialflare-1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>socialflare-1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:776441841741:ios:1e4378210b5818bd</string>
+	<key>DATABASE_URL</key>
+	<string>https://socialflare-1.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="components/loader.js"></script>
+	<script src="lib/onsenui/js/onsenui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/cryptico/0.0.1343522940/cryptico.min.js"></script>
+
+	<link rel="stylesheet" href="components/loader.css">
+	<link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+	<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/firebase.js"></script>
+	<script>
+	    //Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyB06Z-APz-33G0Y5U491YpvpPdm8ssxE3I",
+			authDomain: "socialflare-1.firebaseapp.com",
+			databaseURL: "https://socialflare-1.firebaseio.com",
+			projectId: "socialflare-1",
+			storageBucket: "socialflare-1.appspot.com",
+			messagingSenderId: "776441841741"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script src="js/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
+	<script src="js/index.js"></script>
+
+	<script>
+		ons.disableAutoStyling();
+
+		// Page init event
+		document.addEventListener('init', function(event) {
+			var page = event.target;
+
+			if (page.matches('#splashscreen')) {
+				window.setTimeout(() => {
+					document.querySelector('#navigator').pushPage('loginloadingscreen.html', {animation: 'fade-ios'}, {animationOptions: {duration: 0.2, delay: 0.4, timing: 'ease-in'}});
+				}, 1000);
+			}
+			else if (page.matches('#loginloadingscreen')){
+				loginloadingready();
+			}
+			else if (page.matches('#register')) {
+			} 
+			else if (page.matches('#chats')) {
+				page.querySelector('#contacts-btn-chats').onclick = function() {
+					document.querySelector('#navigator').pushPage('contacts.html', {animation: 'default'}, {animationOptions: {duration: 0.2, timing: 'ease-in'}});
+				};
+				page.querySelector('#settings-btn-chats').onclick = function() {
+					document.querySelector('#navigator').pushPage('settings.html', {animation: 'lift-ios'});
+				};
+				prewriteChats()
+			}
+			else if (page.matches('#contacts')) {
+				page.querySelector('#chats-btn-contacts').onclick = function() {
+					document.querySelector('#navigator').popPage();
+				};
+				page.querySelector('#settings-btn-contacts').onclick = function() {
+					document.querySelector('#navigator').pushPage('settings.html', {animation: 'lift-ios'});
+				};
+				
+				if(localStorage.getItem("contactlist") != null) {
+					writeList();
+				}
+
+				pullHook.onAction = function(done) {
+					setTimeout(done, 1000);
+				};
+			}
+			else if (page.matches('#settings')) {
+			}
+		});
+	</script>
+</head>
+<body>
+	<ons-navigator id="navigator" page="splashscreen.html"></ons-navigator>
+
+	<ons-template id="splashscreen.html">
+		<ons-page id="splashscreen">
+			<div class="content" style="text-align: center">
+				<p>SPLASHSCREEN</p>
+			</div>
+		</ons-page>
+	</ons-template>
+
+	<ons-template id="loginloadingscreen.html">
+		<ons-page id="loginloadingscreen">
+			<div class="content" style="text-align: center">
+				<p>LOGIN LOADING</p>
+			</div>
+		</ons-page>
+	</ons-template>
+
+	<ons-template id="login.html">
+		<ons-page id="login">
+			<ons-toolbar>
+				<div class="center">Login</div>
+			</ons-toolbar>
+			<div class="content" style="text-align: center">
+				<ons-input id="email-form-login" type="email" placeholder="E-Mail" modifier="underlined" float></ons-input><br>
+				<ons-input id="password-form-login" type="password" placeholder="Passwort" modifier="underlined" float></ons-input><br>
+				<ons-button onclick="loginSend()">Login</ons-button>
+				<br><br><br>
+				<ons-button modifier="quiet" onclick="startRegister()">Registrieren</ons-button>				
+			</div>
+		</ons-page>
+	</ons-template>
+
+	<ons-template id="register.html">
+		<ons-page id="register">
+			<ons-toolbar>
+				<div class="left"><ons-back-button>Zurück</ons-back-button></div>
+				<div class="center">Registrieren</div>
+			</ons-toolbar>
+			<div class="content" style="text-align: center">
+				<ons-input id="email-form-register" type="email" placeholder="E-Mail" modifier="underlined" float></ons-input><br>
+				<ons-input id="password-form-register" type="password" placeholder="Passwort" modifier="underlined" float></ons-input><br><br>
+				<ons-input id="phoneno-form-register" type="phone" placeholder="Telefonnummer" modifier="underlined" float></ons-input><br>
+				<ons-input id="name-form-register" type="text" placeholder="Name" modifier="underlined" float></ons-input><br>
+				<ons-button onclick="registerSend()">Registrieren</ons-button>
+			</div>
+		</ons-page>
+	</ons-template>
+
+	<ons-template id="chats.html">
+		<ons-page id="chats">
+			<ons-toolbar>
+				<div class="center">Chats</div>
+			</ons-toolbar>
+
+			<div class="content" style="text-align: center">
+				<p>Ich bin eine Chatseite</p>
+				<ons-button id="contacts-btn-chats">Zu den Kontakten</ons-button>
+				<ons-button id="settings-btn-chats">Zu den Einstellungen</ons-button>
+				<br><br>
+				<ons-list id="chats-list-chats"></ons-list>
+				<p id="locale"></p>
+			</div>
+		</ons-page>
+	</ons-template>
+
+	<ons-template id="contacts.html">
+		<ons-page id="contacts">
+			<ons-toolbar>
+				<div class="center">Kontakte</div>
+			</ons-toolbar>
+
+			<div class="content" style="text-align: center">
+				<p>Ich bin eine Kontaktseite</p>
+				<ons-button id="chats-btn-contacts">Zu den Chats</ons-button>
+				<ons-button id="settings-btn-contacts">Zu den Einstellungen</ons-button>
+				<br><br>
+				<ons-button onclick="refreshContacts()">Liste neu laden</ons-button>
+				<ons-list id="contacts-list-contacts"></ons-list>
+			</div>
+		</ons-page>
+	</ons-template>
+
+	<ons-template id="settings.html">
+		<ons-page id="settings">
+			<ons-toolbar>
+				<div class="left"><ons-back-button>Zurück</ons-back-button></div>
+				<div class="center">Einstellungen</div>
+			</ons-toolbar>
+
+			<div class="content" style="text-align: center">
+				<ons-list>
+					<ons-list-item>
+						<div class="center">
+						Benachrichtigungen empfangen
+						</div>
+						<div class="right">
+						<ons-switch checked></ons-switch>
+						</div>
+					</ons-list-item>
+					<ons-list-item>
+						<div class="center">
+						Chatbenachrichtigungen empfangen
+						</div>
+						<div class="right">
+						<ons-switch checked></ons-switch>
+						</div>
+					</ons-list-item>
+					<ons-list-item>
+						<div class="center">
+						Statusbenachrichtigungen empfangen
+						</div>
+						<div class="right">
+						<ons-switch checked></ons-switch>
+						</div>
+					</ons-list-item>
+					<ons-list-item>
+						<div class="center">
+						Statusbenachrichtigungen senden
+						</div>
+						<div class="right">
+						<ons-switch checked></ons-switch>
+						</div>
+					</ons-list-item>
+				</ons-list>
+			</div>
+		</ons-page>
+	</ons-template>
+</body>
+</html>
