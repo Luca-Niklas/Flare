@@ -39,7 +39,7 @@ var PLATFORM = {
             ANDROID_DIR + '/google-services.json'
         ],
         src: [
-            'google-services.json',
+            './google-services.json',
             ANDROID_DIR + '/assets/www/google-services.json',
             '../../../www/google-services.json'
         ],
