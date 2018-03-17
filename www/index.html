@@ -82,31 +82,40 @@
 
 	<ons-template id="splashscreen.html">
 		<ons-page id="splashscreen">
-			<div class="content" style="text-align: center">
-				<p>SPLASHSCREEN</p>
+			<div class="content" id="splashscreencontent">
+				<img id="splashLogo" src="img/logo.svg"></img>
 			</div>
 		</ons-page>
 	</ons-template>
 
 	<ons-template id="loginloadingscreen.html">
 		<ons-page id="loginloadingscreen">
-			<div class="content" style="text-align: center">
-				<p>LOGIN LOADING</p>
+			<div class="content" id="loginloadingcontent">
+				<div id="loadingWrapper">
+					<img id="splashLogo" src="img/logo.svg"></img>
+					<!-- <div id="loader"></div> -->
+				</div>
 			</div>
 		</ons-page>
 	</ons-template>
 
 	<ons-template id="login.html">
 		<ons-page id="login">
-			<ons-toolbar>
-				<div class="center">Login</div>
-			</ons-toolbar>
-			<div class="content" style="text-align: center">
-				<ons-input id="email-form-login" type="email" placeholder="E-Mail" modifier="underlined" float></ons-input><br>
-				<ons-input id="password-form-login" type="password" placeholder="Passwort" modifier="underlined" float></ons-input><br>
-				<ons-button onclick="loginSend()">Login</ons-button>
-				<br><br><br>
-				<ons-button modifier="quiet" onclick="startRegister()">Registrieren</ons-button>				
+			<div id="loginContent" class="content" style="text-align: center">
+				<div id="loginWrapper">
+					<img id="loginLogo" class="center" src="img/logoText.svg"></img>
+					<br>
+					<ons-input id="email-form-login" type="email" placeholder="E-Mail" modifier="underlined" float></ons-input>
+					<br>
+					<ons-input id="password-form-login" type="password" placeholder="Passwort" modifier="underlined" float></ons-input>
+					<h1 id="lostPassword" class="center">Passwort vergessen</h1>
+					<br>
+					<br>
+					<ons-button id="loginButton" onclick="loginSend()">Login</ons-button>
+					<br>
+					<br>
+					<h1 id="register" class="center" onclick="startRegister()">Registrieren</h1>
+				</div>			
 			</div>
 		</ons-page>
 	</ons-template>
@@ -115,14 +124,22 @@
 		<ons-page id="register">
 			<ons-toolbar>
 				<div class="left"><ons-back-button>Zurück</ons-back-button></div>
-				<div class="center">Registrieren</div>
 			</ons-toolbar>
-			<div class="content" style="text-align: center">
-				<ons-input id="email-form-register" type="email" placeholder="E-Mail" modifier="underlined" float></ons-input><br>
-				<ons-input id="password-form-register" type="password" placeholder="Passwort" modifier="underlined" float></ons-input><br><br>
-				<ons-input id="phoneno-form-register" type="phone" placeholder="Telefonnummer" modifier="underlined" float></ons-input><br>
-				<ons-input id="name-form-register" type="text" placeholder="Name" modifier="underlined" float></ons-input><br>
-				<ons-button onclick="registerSend()">Registrieren</ons-button>
+			<div id="registerContent" class="content" style="text-align: center">
+				<div id="registerWrapper">
+					<img id="registerLogo" class="center" src="img/logoText.svg"></img>
+					<br>
+					<ons-input id="email-form-register" type="email" placeholder="E-Mail" modifier="underlined" float></ons-input>
+					<br>
+					<ons-input id="password-form-register" type="password" placeholder="Passwort" modifier="underlined" float></ons-input>
+					<br>
+					<br>
+					<ons-input id="phoneno-form-register" type="phone" placeholder="Telefonnummer" modifier="underlined" float></ons-input>
+					<br>
+					<ons-input id="name-form-register" type="text" placeholder="Name" modifier="underlined" float></ons-input>
+					<br>
+					<ons-button id="registerButton" onclick="registerSend()">Registrieren</ons-button>
+				</div>
 			</div>
 		</ons-page>
 	</ons-template>

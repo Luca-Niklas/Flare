@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="3696 -797.6 180.034 40.8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #414141;
+      }
+
+      .cls-2 {
+        fill: #8a77ff;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" y1="-0.699" x2="0.5" y2="1.478" gradientUnits="objectBoundingBox">
+      <stop offset="0.15" stop-color="#00cfff"/>
+      <stop offset="1" stop-color="#00ffb0"/>
+    </linearGradient>
+  </defs>
+  <g id="LogoWText" transform="translate(3631 -829.162)">
+    <g id="Beta" transform="translate(65 33.702)">
+      <g id="Ebene_1" data-name="Ebene 1" transform="translate(0 0)">
+        <path id="Pfad_143" data-name="Pfad 143" class="cls-1" d="M0,0H25.719V2.286H0Z" transform="translate(154.315)"/>
+        <path id="Pfad_144" data-name="Pfad 144" class="cls-1" d="M0,0H25.719V2.286H0Z" transform="translate(154.315 18.646)"/>
+        <path id="Pfad_145" data-name="Pfad 145" class="cls-1" d="M0-1H25.719V1.286H0Z" transform="translate(154.315 37.293)"/>
+        <rect id="Rechteck_150" data-name="Rechteck 150" class="cls-1" width="25.719" height="2.286"/>
+        <path id="Pfad_134" data-name="Pfad 134" class="cls-1" d="M0,167.286v17.646H2.286V167.286H12.86V165H0Z" transform="translate(0 -146.354)"/>
+        <path id="Pfad_135" data-name="Pfad 135" class="cls-1" d="M302.286,56.293V20H300V58.579h25.719V56.293Z" transform="translate(-261.421 -20)"/>
+        <path id="Pfad_142" data-name="Pfad 142" class="cls-1" d="M0,0H2.286V38.579H0Z" transform="translate(115.736)"/>
+        <path id="Pfad_136" data-name="Pfad 136" class="cls-1" d="M1062.739,241.574h-2.286L1056.24,230h2.286Z" transform="translate(-921.283 -202.995)"/>
+        <path id="Pfad_137" data-name="Pfad 137" class="cls-1" d="M956.43,20H950v2.286h6.43a10.574,10.574,0,0,1,0,21.147H950v2.286h6.43a12.86,12.86,0,1,0,0-25.719Z" transform="translate(-827.834 -20)"/>
+        <path id="Pfad_141" data-name="Pfad 141" class="cls-2" d="M661.029,320Z" transform="translate(-568.731 -281.421)"/>
+      </g>
+    </g>
+    <g id="FlareNew" transform="translate(138.339 31.562)">
+      <g id="Ebene_1-2" data-name="Ebene 1" transform="translate(0 0)">
+        <path id="Pfad_5" data-name="Pfad 5" class="cls-3" d="M25.047,40.886h-4.98a.843.843,0,0,1-.806-1.1c1.261-3.943,1.955-12.159,2.058-15.87a.241.241,0,0,0-.448-.128,10.656,10.656,0,0,1-2,2.26.244.244,0,0,1-.407-.153A38.788,38.788,0,0,0,16.152,15.78a.245.245,0,0,0-.469.029c-1.261,5.562-3.826,5.256-5.2,4.8a.238.238,0,0,0-.3.306,35.516,35.516,0,0,1,1.622,8.37.235.235,0,0,1-.272.255,9.88,9.88,0,0,1-2.66-.87.242.242,0,0,0-.333.307c1.435,3.465,1.856,8.9,1.968,11.02a.844.844,0,0,1-.844.893H5.472a.846.846,0,0,1-.678-.342C3.107,38.28-5.68,24.965,5.835,6.9a.181.181,0,0,1,.3,0c2.551,3.7,2.806,4.562,3.443,5.112a.167.167,0,0,0,.255-.042A56.387,56.387,0,0,0,14.156.213.17.17,0,0,1,14.481.2c.871,2.918,2.942,7.859,5.314,10.163a.168.168,0,0,0,.172.04c2.1-.7,4.263-3.872,4.9-5.062a.166.166,0,0,1,.3.027c1.011,3.116,9.049,19.493.6,35.1a.847.847,0,0,1-.728.417Z" transform="translate(0.001 -0.086)"/>
+      </g>
+    </g>
+  </g>
+</svg>
