@@ -168,13 +168,5 @@
     "variables": {
       "CONTACTS_USAGE_DESCRIPTION": "Finde Freunde, die ebenfalls Flare benutzen und lasse sich automatisch hinzufügen!"
     }
-  },
-  "cordova-plugin-fcm": {
-    "source": {
-      "type": "registry",
-      "id": "https://github.com/fechanique/cordova-plugin-fcm"
-    },
-    "is_top_level": true,
-    "variables": {}
   }
 }

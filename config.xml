@@ -115,5 +115,4 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <plugin name="cordova-plugin-fcm" spec="https://github.com/fechanique/cordova-plugin-fcm" />
 </widget>

@@ -4,8 +4,22 @@
     "uninstalled": []
   },
   "config_munge": {
-    "files": {}
+    "files": {
+      "res/xml/config.xml": {
+        "parents": {
+          "/*": []
+        }
+      },
+      "AndroidManifest.xml": {
+        "parents": {
+          "/manifest": [],
+          "/manifest/application": []
+        }
+      }
+    }
   },
   "installed_plugins": {},
-  "dependent_plugins": {}
+  "dependent_plugins": {},
+  "modules": [],
+  "plugin_metadata": {}
 }
